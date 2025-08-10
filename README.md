@@ -18,6 +18,9 @@ A beautiful web application built with FastAPI and HTML that converts PDF files 
 2. **markitdown** (`>=0.1.2`) - Microsoft's document conversion tool
 3. **marker** (`>=1.8.1`) - Advanced PDF to Markdown conversion with ML
 4. **docling** (`>=2.41.0`) - IBM's document intelligence platform
+5. **pdfplumber** (`>=0.10.0`) - Advanced PDF text and table extraction with layout preservation
+6. **pypdf** (`>=4.0.0`) - Pure Python PDF processing library with comprehensive features
+7. **pypdfium2** (`>=4.30.0`) - High-performance PDF processing based on PDFium engine
 
 ## Installation
 
@@ -34,18 +37,21 @@ A beautiful web application built with FastAPI and HTML that converts PDF files 
    ```bash
    uv sync
    ```
-   
+
    Or if you don't have a virtual environment:
    ```bash
    uv pip install -r requirements.txt
    ```
 
    Note: Some libraries may require additional system dependencies:
-   
+
    - **For marker**: May require additional ML dependencies
    - **For docling**: May require specific Python versions and dependencies
    - **For pymupdf4llm**: Should work out of the box
    - **For markitdown**: May require additional dependencies for certain file types
+   - **For pdfplumber**: Should work out of the box, excellent for table extraction
+   - **For pypdf**: Pure Python implementation, works everywhere
+   - **For pypdfium2**: High performance, based on Google's PDFium
 
 3. **Verify installation** (optional):
    ```bash
@@ -58,7 +64,7 @@ A beautiful web application built with FastAPI and HTML that converts PDF files 
    ```bash
    uv run python main.py
    ```
-   
+
    Or alternatively:
    ```bash
    uv run uvicorn main:app --host 0.0.0.0 --port 8000 --reload
@@ -137,6 +143,21 @@ If you encounter issues with specific libraries:
    uv add docling
    ```
 
+5. **pdfplumber**: Usually installs without issues
+   ```bash
+   uv add pdfplumber
+   ```
+
+6. **pypdf**: Pure Python, installs without issues
+   ```bash
+   uv add pypdf
+   ```
+
+7. **pypdfium2**: Usually installs without issues
+   ```bash
+   uv add pypdfium2
+   ```
+
 ### Common Issues
 
 - **"Library not available"**: The library failed to import. Check the installation.
@@ -149,6 +170,9 @@ If you encounter issues with specific libraries:
 - **markitdown**: Good balance of speed and quality
 - **marker**: Best quality but slower, especially on first run
 - **docling**: Advanced features but may be slower
+- **pdfplumber**: Excellent for table extraction and layout preservation, moderate speed
+- **pypdf**: Good balance of features and compatibility, moderate speed
+- **pypdfium2**: High performance, excellent for large files and complex documents
 
 ## Development
 
@@ -180,4 +204,4 @@ This project is provided as-is for educational and development purposes.
 
 ## Contributing
 
-Feel free to submit issues and enhancement requests! 
+Feel free to submit issues and enhancement requests!

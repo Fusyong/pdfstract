@@ -11,9 +11,17 @@ dependencies = [
     "jinja2>=3.1.6",
     "marker-pdf>=1.8.1",
     "markitdown[pdf]>=0.1.2",
+    "pdfplumber>=0.10.0",
     "pymupdf4llm>=0.0.26",
+    "pypdf>=4.0.0",
     "pypdf2>=3.0.1",
+    "pypdfium2>=4.30.0",
+    "pymupdf>=1.24.0",
     "python-magic>=0.4.27",
     "python-multipart>=0.0.20",
     "uvicorn[standard]>=0.35.0",
 ]
+
+[[tool.uv.index]]
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+default = true
